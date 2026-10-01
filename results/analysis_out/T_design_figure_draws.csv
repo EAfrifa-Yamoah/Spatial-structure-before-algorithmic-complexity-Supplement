@@ -1,0 +1,21 @@
+"target","coverage","n","species","seed","extent_frac","redraws","presences"
+"conditional","dispersed",30,"dover sole",20260925,0.936291308462008,1,21
+"marginal","dispersed",30,"dover sole",20260925,0.851003493863932,1,25
+"conditional","clustered",30,"dover sole",20260925,0.0128206022268466,0,24
+"marginal","clustered",30,"dover sole",20260925,0.0170051316225189,0,25
+"conditional","dispersed",50,"dover sole",20260925,0.85803061223739,0,38
+"marginal","dispersed",50,"dover sole",20260925,0.946712590191978,0,38
+"conditional","clustered",50,"dover sole",20260925,0.0121026912655875,2,45
+"marginal","clustered",50,"dover sole",20260925,0.0120957519931192,1,38
+"conditional","dispersed",100,"dover sole",20260925,0.960425835239257,0,71
+"marginal","dispersed",100,"dover sole",20260925,0.984593813029462,0,80
+"conditional","clustered",100,"dover sole",20260925,0.0177423074055186,0,83
+"marginal","clustered",100,"dover sole",20260925,0.0111516668692443,0,87
+"conditional","dispersed",200,"dover sole",20260925,0.976137366572155,0,153
+"marginal","dispersed",200,"dover sole",20260925,0.988412438555023,0,150
+"conditional","clustered",200,"dover sole",20260925,0.0146353169602932,0,174
+"marginal","clustered",200,"dover sole",20260925,0.0109448754514563,0,181
+"conditional","dispersed",500,"dover sole",20260925,0.976645740045984,0,397
+"marginal","dispersed",500,"dover sole",20260925,0.991498961719396,0,407
+"conditional","clustered",500,"dover sole",20260925,0.0137285782332249,0,441
+"marginal","clustered",500,"dover sole",20260925,0.043381603300406,0,346

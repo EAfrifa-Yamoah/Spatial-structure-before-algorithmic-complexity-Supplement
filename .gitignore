@@ -1,0 +1,10 @@
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+*.toc
+# R
+.Rhistory
+.RData
+.Rproj.user/
+# surveyjoin cache lives outside the repository
