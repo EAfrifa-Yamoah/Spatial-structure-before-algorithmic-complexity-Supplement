@@ -1,16 +1,17 @@
-## Maps of the Route 2 sampling designs, drawn from the same functions the
-## benchmark uses (route2_benchmark_scaffold.R, sections 1 to 8), so what is
+## Maps of the benchmark sampling designs, drawn from the same functions the
+## benchmark uses (R/benchmark_scaffold.R, sections 1 to 8), so what is
 ## shown is exactly what the benchmark draws.
 ##
 ## Main text
 ##   FigS_design_1_sampling      targets (rows) x evaluation set and example
 ##                               subsamples at n = 30 and 200 (columns)
 ##   FigS_design_2_cv_folds      random and spatial block folds, n = 200
-## Supplementary (all scenarios)
+## Supplementary (all scenarios; Figures S1 to S4 of the Supporting Information)
 ##   FigS_design_S1_conditional  conditional target: coverage (rows) x n (columns)
 ##   FigS_design_S2_marginal     marginal target: coverage (rows) x n (columns)
 ##   FigS_design_S3_folds_dispersed   folds for dispersed subsamples, all n
 ##   FigS_design_S4_folds_clustered   folds for clustered subsamples, all n
+## The draws are recorded in T_design_figure_draws.csv (Table S17).
 ##
 ## Colour meanings are fixed across all of these figures and do not reuse the
 ## five model colours of the results figures:

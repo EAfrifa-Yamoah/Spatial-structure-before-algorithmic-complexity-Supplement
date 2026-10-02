@@ -7,4 +7,8 @@
 .Rhistory
 .RData
 .Rproj.user/
-# surveyjoin cache lives outside the repository
+*.Rproj
+# smoke test output (results/smoke_test.rds) and cluster logs are not archived
+results/smoke_test.rds
+sdm_bench_*.err
+# surveyjoin cache lives outside the repository (~/.cache/surveyjoin)

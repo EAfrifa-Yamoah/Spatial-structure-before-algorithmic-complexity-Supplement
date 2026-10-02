@@ -1,0 +1,35 @@
+{
+  "title": "Which modelling choices are supported when marine survey data are limited? Code, data and results",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "access_right": "open",
+  "license": "MIT",
+  "description": "<p>Code and data for: Afrifa-Yamoah, E., Siqueira, A. C., Awuah-Mensah, Y. K., Fouedjio, F. and Mueller, U. (2026). Which modelling choices are supported when marine survey data are limited? An evidence map of 95 studies and a benchmark on structured subsamples of a trawl survey. Preprint, EcoEvoRxiv, https://doi.org/10.32942/X2JM49.</p><p>The repository holds the evidence map coding sheet and the script that draws the map; the benchmark scaffold that draws structured subsamples from the NWFSC West Coast Groundfish Bottom Trawl Survey (via the surveyjoin R package), fits five species distribution models to each subsample and evaluates them against the held out survey; the analysis and figure scripts; the result tables and figures from the 10 replicates per cell run; and the Supporting Information.</p><p>R code is released under the MIT licence. Figures, the coding sheet and the Supporting Information are released under CC BY 4.0. Survey data are not redistributed.</p>",
+  "creators": [
+    {"name": "Afrifa-Yamoah, Eben"},
+    {"name": "Siqueira, Alexandre C."},
+    {"name": "Awuah-Mensah, Yaw Kwaafo"},
+    {"name": "Fouedjio, Francky"},
+    {"name": "Mueller, Ute"}
+  ],
+  "keywords": [
+    "species distribution models",
+    "marine surveys",
+    "spatial cross validation",
+    "sample size",
+    "sampling coverage",
+    "sdmTMB",
+    "random forest",
+    "generalised additive models",
+    "evidence map",
+    "groundfish"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.32942/X2JM49",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ]
+}

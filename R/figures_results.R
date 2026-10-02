@@ -1,4 +1,4 @@
-## Route 2 benchmark: results figures, version 2.
+## Benchmark results figures.
 ##
 ## Sample size is a discrete design factor (30, 50, 100, 200, 500), so no
 ## figure draws a line between sample sizes. Each figure is built around the
@@ -14,8 +14,9 @@
 ##          failure rates as a labelled tile matrix
 ##   Fig 5  calibration slope: median and interquartile range per model at
 ##          each n, against the reference slope of 1
-## Inputs are the tables written by route2_analysis.R (analysis_out/T_*.csv)
-## and results_all.rds (for calibration quantiles).
+## Inputs are the tables written by R/analysis.R (results/analysis_out/T_*.csv)
+## and results/results_all.rds (for calibration quantiles). Fig 1 is Figure S5 and
+## Fig 2b is Figure S6 of the Supporting Information.
 ## The five model colours are the same as in every other results figure.
 
 suppressPackageStartupMessages({ library(dplyr); library(tidyr); library(ggplot2); library(patchwork) })
@@ -167,4 +168,4 @@ f5 <- ggplot(cal, aes(n_f, med, colour = model)) +
   base_theme
 ggsave("results/analysis_out/Fig5_v2_calibration.png", f5, width = 8, height = 6, dpi = 300, bg = "white")
 ggsave("results/analysis_out/Fig5_v2_calibration.pdf", f5, width = 8, height = 6, bg = "white")
-cat("Wrote Fig1_v2 to Fig5_v2 in analysis_out/\n")
+cat("Wrote Fig1_v2 to Fig5_v2 in results/analysis_out/\n")

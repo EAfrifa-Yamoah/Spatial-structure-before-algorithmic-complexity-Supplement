@@ -1,20 +1,18 @@
 ## =====================================================================
-## Route 2 benchmark scaffold
-## Spatial structure or algorithm choice? Sparse subsamples of a
-## harmonised marine trawl survey.
+## Benchmark scaffold: spatial structure or algorithm choice?
+## Structured subsamples of a harmonised marine trawl survey.
 ##
-## STATUS: UNEXECUTED SCAFFOLD, loader implemented against the documented
-## surveyjoin interface (cache_data, load_sql_data, get_data, surv_db). Run Section 0
-## checks and the smoke test at the bottom on the common species at
-## n = 500 before scaling up. Replace every block marked "TODO" before
-## any result is reported.
+## The loader is written against the documented surveyjoin interface
+## (cache_data, load_sql_data, get_data, surv_db). Run from the repository
+## root. Without BENCH_RUN_FULL=TRUE the script runs the smoke test in
+## Section 11; with it, the full design in Section 9.
 ##
-## Design (see Route2_Benchmark_Manuscript.docx, Section 2):
+## Design (manuscript Section 2):
 ##   sample sizes   n  in {30, 50, 100, 200, 500}
 ##   coverage       in {"dispersed", "clustered"}
 ##   targets        in {"conditional", "marginal"}
 ##   models         RF, spatial RF, GAM, spatial GAM, sdmTMB (GMRF)
-##   replicates     R = 50 (reduce to 30 for a first pass)
+##   replicates     BENCH_REPS per cell (10 for the committed results)
 ##   metrics        AUC, Brier score, calibration slope
 ##   validation     truth on held out set; random 5 fold; spatial block 5 fold
 ## =====================================================================
@@ -30,7 +28,7 @@ suppressPackageStartupMessages({
   library(dplyr); library(tidyr); library(sf); library(ranger); library(mgcv)
   library(sdmTMB); library(blockCV); library(future.apply); library(surveyjoin)
 })
-## renv::init() once; renv::snapshot() before archiving.
+## Package versions used for the committed results: results/sessioninfo_smoke_test.txt
 set.seed(20260919)
 
 ## ---- 1. Data ----------------------------------------------------------
@@ -231,8 +229,8 @@ make_response <- function(df, sp) { df$y <- as.integer(df[[sp]] > 0); df }
 
 ## ---- 3. Evaluation partitions (once per species) ----------------------
 ## Conditional target: random 30% of hauls held out.
-## Marginal target: contiguous region, here the northern 30% by Y.
-##   TODO: choose the axis that follows the dominant environmental gradient.
+## Marginal target: contiguous region, the northern 30% of hauls by Y
+##   (the survey's dominant gradient runs north to south).
 make_partitions <- function(df) {
   n <- nrow(df)
   cond_idx <- sample(n, size = round(0.3 * n))
@@ -283,7 +281,8 @@ subsample <- function(pool, n, coverage, grid_km = 25, min_pres = 5, cluster_fra
 }
 
 ## ---- 5. Models --------------------------------------------------------
-## Covariates: keep small and fixed. TODO: confirm bottom_temp coverage.
+## Covariates: kept small and fixed. Hauls lacking bottom_temp are dropped
+## in Section 1 (258 of 12672 in the committed run; see results/pilot_run_log.txt).
 covs <- c("depth", "bottom_temp", "year")   # year numeric; hauls lacking bottom_temp dropped below
 
 k_for_n <- function(n) max(3, min(10, floor(n / 10)))   # basis dimension cap
@@ -478,7 +477,7 @@ if (RUN_FULL) {
   saveRDS(res, "results/results_all.rds")
 }
 
-## ---- 10. Analysis (sketch) --------------------------------------------
+## ---- 10. Analysis (sketch; implemented in R/analysis.R) ----------------
 ## library(lme4); library(emmeans)
 ## m_auc <- lmer(truth_auc ~ model * factor(n) * coverage * target + (1 | species/rep), data = res)
 ## spatial effect within family: emmeans contrasts rf_spatial - rf, gam_spatial - gam, by n, coverage

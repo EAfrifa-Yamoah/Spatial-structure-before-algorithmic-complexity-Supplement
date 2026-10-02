@@ -1,11 +1,14 @@
-## Figure 2. Evidence map as a matrix, drawn from Appendix S3 (coding sheet).
+## Evidence map as a matrix, drawn from the coding sheet (data/evidence_map_coding_sheet.csv).
+## The matrix is a graphical rendering of the contrasts of main text Table 1 for the
+## studies coded in the sheet; the counts of Table 1 itself are derived as described
+## in Appendix S1.3 of the Supporting Information.
 ##
 ## Rows    : the contrasts of Table 1.
 ## Columns : sample size bands (below 100; 100 to 500; above 500; structural or NA).
 ## Cell    : number of marine sources (single hue sequential ramp, colour blind safe);
 ##           non marine, simulated and mixed system sources as grey outlined markers.
 ##
-## Rules applied (state these in the caption or Appendix S3):
+## Rules applied (state these wherever the matrix is shown):
 ##  * A study contributes to every band its reported sample size range spans
 ##    (n_min to n_max). A study with n_min and n_max both NA, or a methods paper
 ##    coded "structural guidance", falls in the "structural or NA" band.
@@ -22,9 +25,9 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(tidyr); library(stringr); library(ggplot2)
 })
 
-sheet_path <- "data/Appendix_S3_evidence_map_coding_sheet.csv"
-out_png    <- "results/analysis_out/Figure2_evidence_map.png"
-out_pdf    <- "results/analysis_out/Figure2_evidence_map.pdf"
+sheet_path <- "data/evidence_map_coding_sheet.csv"
+out_png    <- "results/analysis_out/evidence_map_matrix.png"
+out_pdf    <- "results/analysis_out/evidence_map_matrix.pdf"
 
 cs <- read_csv(sheet_path, show_col_types = FALSE) |>
   filter(!is.na(year), !str_detect(row_status, "add")) |>
