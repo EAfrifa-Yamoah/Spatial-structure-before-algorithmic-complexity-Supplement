@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the repository and the preprint below."
+type: software
+title: "Which modelling choices are supported when marine survey data are limited? Code, data and results"
+abstract: "Code and data for an evidence map of 95 studies on species distribution modelling under limited marine survey data, and a benchmark that fits five models to structured subsamples of the NWFSC West Coast Groundfish Bottom Trawl Survey and evaluates them against the held out survey."
+authors:
+  - family-names: Afrifa-Yamoah
+    given-names: Eben
+  - family-names: Siqueira
+    given-names: Alexandre C.
+  - family-names: Awuah-Mensah
+    given-names: Yaw Kwaafo
+  - family-names: Fouedjio
+    given-names: Francky
+  - family-names: Mueller
+    given-names: Ute
+version: 1.0.0
+date-released: "2026-10-02"
+license: MIT
+repository-code: "https://github.com/EAfrifa-Yamoah/Which-modelling-choices-are-supported"
+keywords:
+  - species distribution models
+  - marine surveys
+  - spatial cross validation
+  - sample size
+  - sdmTMB
+  - random forest
+  - generalised additive models
+  - evidence map
+preferred-citation:
+  type: article
+  title: "Which modelling choices are supported when marine survey data are limited? An evidence map of 95 studies and a benchmark on structured subsamples of a trawl survey"
+  authors:
+    - family-names: Afrifa-Yamoah
+      given-names: Eben
+    - family-names: Siqueira
+      given-names: Alexandre C.
+    - family-names: Awuah-Mensah
+      given-names: Yaw Kwaafo
+    - family-names: Fouedjio
+      given-names: Francky
+    - family-names: Mueller
+      given-names: Ute
+  journal: EcoEvoRxiv
+  year: 2026
+  doi: 10.32942/X2JM49
+  notes: "Preprint; manuscript submitted."
