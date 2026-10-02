@@ -4,7 +4,7 @@ Code, data and results for:
 
 > Afrifa-Yamoah, E., Siqueira, A. C., Awuah-Mensah, Y. K., Fouedjio, F. and Mueller, U. (2026). Which modelling choices are supported when marine survey data are limited? An evidence map of 95 studies and a benchmark on structured subsamples of a trawl survey. Manuscript submitted. Preprint: https://doi.org/10.32942/X2JM49
 
-The repository holds (i) the evidence map coding sheet and the script that draws the map as a matrix, (ii) the benchmark scaffold that draws structured subsamples from the NWFSC West Coast Groundfish Bottom Trawl Survey (via `surveyjoin`), fits five species distribution models to each subsample and evaluates them against the held out survey, (iii) the analysis and figure scripts, (iv) the result tables and figures from the 10 replicates per cell run, and (v) the Supporting Information. To cite the repository, use `CITATION.cff` or the Zenodo record of this release.
+The repository holds (i) the evidence map coding sheet and the script that draws the map as a matrix, (ii) the benchmark scaffold that draws structured subsamples from the NWFSC West Coast Groundfish Bottom Trawl Survey (via `surveyjoin`), fits five species distribution models to each subsample and evaluates them against the held out survey, (iii) the analysis and figure scripts, (iv) the result tables and figures from the 10 replicates per cell run, and (v) the Supporting Information. The repository is archived on Zenodo: https://doi.org/10.5281/zenodo.23102980 (release v1.0.0). To cite it, use that DOI together with `CITATION.cff`.
 
 ## Layout
 
