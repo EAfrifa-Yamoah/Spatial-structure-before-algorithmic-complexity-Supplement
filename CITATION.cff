@@ -15,6 +15,11 @@ authors:
   - family-names: Mueller
     given-names: Ute
 version: 1.0.0
+doi: 10.5281/zenodo.23102980
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23102980
+    description: "Zenodo archive of release v1.0.0"
 date-released: "2026-10-02"
 license: MIT
 repository-code: "https://github.com/EAfrifa-Yamoah/Which-modelling-choices-are-supported"
