@@ -1,4 +1,4 @@
-# Spatial structure or algorithm choice? An evidence map and a benchmark on sparse subsamples of a harmonised marine trawl survey
+# Which modelling choices are supported when marine survey data are limited? An evidence map of 95 studies and a benchmark on structured subsamples of a trawl survey
 
 Code and data for:
 
