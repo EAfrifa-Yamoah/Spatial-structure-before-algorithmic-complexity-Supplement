@@ -46,6 +46,15 @@ res <- res |>
          opt_random  = cvr_auc - truth_auc,
          opt_spatial = cvs_auc - truth_auc)
 
+## Replicates for which no subsample met the presence minimum carry a single
+## row with model NA and an error message. They are counted separately and
+## removed before the model level summaries, so that every model level table
+## is conditional on a subsample having been drawn.
+sub_fail <- res |> filter(is.na(model)) |> count(species, target, n, coverage, name = "replicates_not_drawn")
+write.csv(sub_fail, "results/analysis_out/T_subsample_failures.csv", row.names = FALSE)
+cat(sprintf("Replicates with no admissible subsample: %d\n", sum(sub_fail$replicates_not_drawn)))
+res <- res |> filter(!is.na(model))
+
 n_runs <- res |> distinct(species, target, n, coverage, rep) |> nrow()
 cat(sprintf("Replicate runs: %d (%d species, %d reps per cell); model rows: %d\n",
             n_runs, n_distinct(res$species), max(res$rep), nrow(res)))

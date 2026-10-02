@@ -254,9 +254,19 @@ subsample <- function(pool, n, coverage, grid_km = 25, min_pres = 5, cluster_fra
       gx <- floor(pool$X / grid_km); gy <- floor(pool$Y / grid_km)
       cell <- paste(gx, gy)
       cells <- unique(cell)
-      take_cells <- sample(cells, min(n, length(cells)))
-      pick <- sapply(take_cells, function(cc) sample(which(cell == cc), 1))
-      if (length(pick) < n) pick <- c(pick, sample(setdiff(seq_len(nrow(pool)), pick), n - length(pick)))
+      take_cells <- cells[sample.int(length(cells), min(n, length(cells)))]
+      ## One haul per chosen cell. Index into the vector of candidates rather
+      ## than calling sample() on it: sample(x, 1) with a single candidate x
+      ## draws from 1:x instead of returning x, which would pick an arbitrary
+      ## haul (and possibly a duplicate) whenever a grid cell holds one haul.
+      pick <- vapply(take_cells, function(cc) {
+        idx <- which(cell == cc)
+        idx[sample.int(length(idx), 1)]
+      }, integer(1))
+      if (length(pick) < n) {
+        rest <- setdiff(seq_len(nrow(pool)), pick)
+        pick <- c(pick, rest[sample.int(length(rest), n - length(pick))])
+      }
     } else {
       ## A band of fixed width (cluster_frac of the north to south extent),
       ## placed at random, with n hauls sampled at random inside it. Extent
