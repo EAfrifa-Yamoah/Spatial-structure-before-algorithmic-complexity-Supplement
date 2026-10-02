@@ -2,7 +2,7 @@
 
 Code and data for:
 
-> Afrifa-Yamoah, E. (2026). Which modelling choices hold where marine survey data are sparse? An evidence map of 95 studies and a benchmark on structured subsamples of a harmonised trawl survey. Manuscript in preparation.
+> Afrifa-Yamoah, E., Siqueira, A. C., Awuah-Mensah, Y. K., Fouedjio, F., Mueller, U. (2026). Which modelling choices are supported when marine survey data are limited? An evidence map of 95 studies and a benchmark on structured subsamples of a trawl survey. Manuscript submitted. Pre-print available at https://doi.org/10.32942/X2JM49
 
 The repository holds (i) the evidence map coding sheet and the script that draws the map, (ii) the benchmark scaffold that draws structured subsamples from the NWFSC West Coast Groundfish Bottom Trawl Survey (via `surveyjoin`), fits five species distribution models to each and evaluates them against the held-out survey, (iii) the analysis and figure scripts, and (iv) the result tables from the run of 25 September 2026 (10 replicates per cell).
 
